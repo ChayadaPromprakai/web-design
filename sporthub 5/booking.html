@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Confirm booking – Sport Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-page="booking">
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Sport Hub</a>
+      <nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="sports.html">Sports</a><a href="courts.html" aria-current="page">Courts</a><a href="players.html">Find Players</a><a href="events.html">Events</a><a href="community.html">Community</a></nav>
+      <a class="login" href="bookings.html">My Bookings</a>
+      <a class="btn auth-link" href="login.html">Log in</a>
+    </div>
+    <nav class="menu" aria-label="Menu"><a href="index.html">Home</a><a href="sports.html">Sports</a><a href="courts.html" aria-current="page">Courts</a><a href="players.html">Find Players</a><a href="events.html">Events</a><a href="community.html">Community</a></nav>
+  </header>
+  <main>
+    <section class="hd"><div class="wrap"><h1>Confirm booking</h1><p>Check your details and pay</p></div></section>
+    <div class="wrap">
+      <p id="empty" class="notice" hidden>You have not picked a time yet. <a href="courts.html">Choose a court</a></p>
+      <p id="needlogin" class="notice" hidden>Please <a id="loginlink" href="login.html">log in</a> or <a href="signup.html">create an account</a> to finish your booking.</p>
+    </div>
+    <div class="wrap two" id="main" hidden>
+      <form class="panel" id="f">
+        <label class="f">Full name<input id="name" autocomplete="name" required></label>
+        <label class="f">Phone<input id="phone" type="tel" autocomplete="tel" required></label>
+        <label class="f">Payment<select id="method"><option>PromptPay</option><option>Credit card</option></select></label>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" id="pay" type="submit">Pay</button>
+      </form>
+      <aside class="panel">
+        <h2>Summary</h2>
+        <div class="row"><span>Court</span><b id="scourt">—</b></div>
+        <div class="row"><span>Date</span><b id="sdate">—</b></div>
+        <div class="row"><span>Time</span><b id="stime">—</b></div>
+        <div class="row"><span>Total</span><b class="pr" id="stotal">—</b></div>
+      </aside>
+    </div>
+  </main>
+  <footer><div class="wrap"><p><a class="logo flogo" href="index.html">Sport Hub</a></p><p class="fl"><a href="sports.html">Sports</a><a href="courts.html">Courts</a><a href="players.html">Find Players</a><a href="events.html">Events</a><a href="community.html">Community</a><a href="search.html">Search</a><a href="map.html">Map</a><a href="news.html">News</a><a href="clubs.html">Clubs</a><a href="profile.html">Profile</a><a href="settings.html">Settings</a></p><p class="fl dim">© 2026 Sport Hub</p></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>

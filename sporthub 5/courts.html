@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Court List – Sport Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-page="courts">
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">Sport Hub</a>
+      <nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="sports.html">Sports</a><a href="courts.html" aria-current="page">Courts</a><a href="players.html">Find Players</a><a href="events.html">Events</a><a href="community.html">Community</a></nav>
+      <a class="login" href="bookings.html">My Bookings</a>
+      <a class="btn auth-link" href="login.html">Log in</a>
+    </div>
+    <nav class="menu" aria-label="Menu"><a href="index.html">Home</a><a href="sports.html">Sports</a><a href="courts.html" aria-current="page">Courts</a><a href="players.html">Find Players</a><a href="events.html">Events</a><a href="community.html">Community</a></nav>
+  </header>
+  <main>
+    <section class="hd"><div class="wrap"><h1>Court List</h1><p><span id="count">6 courts near Khon Kaen</span></p></div></section>
+    <div class="wrap">
+      <div class="bar"><input id="q" type="search" placeholder="Search courts or locations" aria-label="Search"><select id="sort" aria-label="Sort"><option value="km">Sort: Nearest</option><option value="price">Sort: Price</option></select></div>
+      <div class="chips"><button class="chip" type="button" data-sport="All" aria-pressed="false">All</button><button class="chip" type="button" data-sport="Soccer" aria-pressed="false">Soccer</button><button class="chip" type="button" data-sport="Badminton" aria-pressed="false">Badminton</button><button class="chip" type="button" data-sport="Basketball" aria-pressed="false">Basketball</button><button class="chip" type="button" data-sport="Tennis" aria-pressed="false">Tennis</button><button class="chip" type="button" data-sport="Swimming" aria-pressed="false">Swimming</button><button class="chip" type="button" data-sport="Futsal" aria-pressed="false">Futsal</button></div>
+      <div class="grid" id="grid">
+        <article class="card" data-sport="Soccer" data-name="Green Field Arena" data-area="KKU Sport Complex" data-km="1.2" data-price="600">
+          <div class="ph g0">Soccer</div>
+          <div class="cb"><small>Soccer</small><h3>Green Field Arena</h3><small>KKU Sport Complex · 1.2 km</small>
+            <div class="row"><span class="pr">600 THB / hr</span><a class="btn" href="court.html?id=1">Book</a></div></div>
+        </article>
+        <article class="card" data-sport="Badminton" data-name="Smash Badminton Hall" data-area="Mittraphap Rd" data-km="2.0" data-price="180">
+          <div class="ph g1">Badminton</div>
+          <div class="cb"><small>Badminton</small><h3>Smash Badminton Hall</h3><small>Mittraphap Rd · 2.0 km</small>
+            <div class="row"><span class="pr">180 THB / hr</span><a class="btn" href="court.html?id=2">Book</a></div></div>
+        </article>
+        <article class="card" data-sport="Basketball" data-name="City Hoops" data-area="Downtown" data-km="2.4" data-price="300">
+          <div class="ph g2">Basketball</div>
+          <div class="cb"><small>Basketball</small><h3>City Hoops</h3><small>Downtown · 2.4 km</small>
+            <div class="row"><span class="pr">300 THB / hr</span><a class="btn" href="court.html?id=3">Book</a></div></div>
+        </article>
+        <article class="card" data-sport="Tennis" data-name="Ace Tennis Club" data-area="Nong Khai Rd" data-km="3.1" data-price="350">
+          <div class="ph g3">Tennis</div>
+          <div class="cb"><small>Tennis</small><h3>Ace Tennis Club</h3><small>Nong Khai Rd · 3.1 km</small>
+            <div class="row"><span class="pr">350 THB / hr</span><a class="btn" href="court.html?id=4">Book</a></div></div>
+        </article>
+        <article class="card" data-sport="Swimming" data-name="Aqua Center Pool" data-area="Aqua Center" data-km="4.0" data-price="80">
+          <div class="ph g0">Swimming</div>
+          <div class="cb"><small>Swimming</small><h3>Aqua Center Pool</h3><small>Aqua Center · 4.0 km</small>
+            <div class="row"><span class="pr">80 THB / hr</span><a class="btn" href="court.html?id=5">Book</a></div></div>
+        </article>
+        <article class="card" data-sport="Futsal" data-name="Night Futsal" data-area="Sri Chan Rd" data-km="1.8" data-price="400">
+          <div class="ph g1">Futsal</div>
+          <div class="cb"><small>Futsal</small><h3>Night Futsal</h3><small>Sri Chan Rd · 1.8 km</small>
+            <div class="row"><span class="pr">400 THB / hr</span><a class="btn" href="court.html?id=6">Book</a></div></div>
+        </article>
+      </div>
+      <p id="empty" class="notice" hidden>No courts match your search.</p>
+    </div>
+  </main>
+  <footer><div class="wrap"><p><a class="logo flogo" href="index.html">Sport Hub</a></p><p class="fl"><a href="sports.html">Sports</a><a href="courts.html">Courts</a><a href="players.html">Find Players</a><a href="events.html">Events</a><a href="community.html">Community</a><a href="search.html">Search</a><a href="map.html">Map</a><a href="news.html">News</a><a href="clubs.html">Clubs</a><a href="profile.html">Profile</a><a href="settings.html">Settings</a></p><p class="fl dim">© 2026 Sport Hub</p></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>

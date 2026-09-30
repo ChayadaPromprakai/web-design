@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sport Hub – Find. Book. Play. Together.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body data-page="home">
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Sport Hub home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M3 3l18 18M21 3L3 21" />
+        </svg>
+        Sport Hub
+      </a>
+      <nav class="links" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="sports.html">Sports</a>
+        <a href="courts.html">Courts</a>
+        <a href="players.html">Find Players</a>
+        <a href="events.html">Events</a>
+        <a href="community.html">Community</a>
+      </nav>
+      <div class="tools">
+        <button class="iconbtn fav" aria-label="Favorites"></button>
+        <button class="iconbtn bell" aria-label="Notifications"></button>
+        <a class="avatar" href="login.html" aria-label="Profile"></a>
+        <button class="iconbtn menubtn" id="menubtn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="menu" id="menu" aria-label="Menu">
+      <a href="index.html" aria-current="page">Home</a><a href="courts.html">Sports</a><a href="courts.html">Courts</a><a href="#">Find
+        Players</a><a href="events.html">Events</a><a href="community.html">Community</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="c c1"></span><span class="c c2"></span><span class="c c3"></span>
+      <div class="wrap">
+        <h1>Find. Book. Play. Together.</h1>
+        <p>Discover sports facilities, find your perfect place to play, connect with new people, and join exciting
+          sports activities near you.</p>
+        <form class="search" role="search" onsubmit="return false">
+          <input type="search" placeholder="Search for courts, sports or players"
+            aria-label="Search for courts, sports or players">
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="blk" aria-labelledby="h-sports">
+        <div class="head">
+          <h2 id="h-sports">Popular Sports</h2><a href="#">View All</a>
+        </div>
+        <div class="sports">
+          <a href="#">Basketball</a>
+          <a href="#">Badminton</a>
+          <a href="#">Soccer</a>
+          <a class="t" href="#">Tennis</a>
+          <a class="v" href="#">Volleyball</a>
+          <a href="#">More</a>
+        </div>
+      </section>
+
+      <section class="blk" aria-labelledby="h-fac">
+        <div class="head">
+          <h2 id="h-fac">Popular Facilities</h2><a href="#">View All</a>
+        </div>
+        <div class="grid fac">
+          <article class="card">
+            <div class="ph g1"><span>Photo</span></div>
+            <div class="body"><small>Football</small>
+              <h3>Green Field Arena</h3>
+              <p class="meta">KKU Sport Complex · 1.2 km</p>
+              <p class="price">600 THB / hr</p><a class="btn view" href="#">View Details</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="ph g2"><span>Photo</span></div>
+            <div class="body"><small>Badminton</small>
+              <h3>Shuttle Pro Court</h3>
+              <p class="meta">Gym 2 · 2.4 km</p>
+              <p class="price">150 THB / hr</p><a class="btn view" href="#">View Details</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="ph g3"><span>Photo</span></div>
+            <div class="body"><small>Basketball</small>
+              <h3>City Hoops Indoor</h3>
+              <p class="meta">Municipal Sports Center · 3.1 km</p>
+              <p class="price">400 THB / hr</p><a class="btn view" href="#">View Details</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="ph g1"><span>Photo</span></div>
+            <div class="body"><small>Swimming</small>
+              <h3>Aqua 50m Pool</h3>
+              <p class="meta">Aqua Center · 4.0 km</p>
+              <p class="price">80 THB / visit</p><a class="btn view" href="#">View Details</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="blk events" aria-labelledby="h-ev">
+        <div class="head">
+          <h2 id="h-ev">Upcoming Events &amp; Matches</h2><a href="#">View All</a>
+        </div>
+        <div class="grid ev">
+          <article class="card">
+            <div class="ph g5"><span>Event</span></div>
+            <div class="body"><small>3 spots left</small>
+              <h3>Friendly Futsal 5v5</h3>
+              <p class="date">Sat, Sep 26 · 18:00</p><a class="btn" href="#">Join</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="ph g4"><span>Event</span></div>
+            <div class="body"><small>2 spots left</small>
+              <h3>Beginner Badminton Night</h3>
+              <p class="date">Sun, Sep 27 · 10:00</p><a class="btn" href="#">Join</a>
+            </div>
+          </article>
+          <article class="card three">
+            <div class="ph g1"><span>Event</span></div>
+            <div class="body"><small>200 runners</small>
+              <h3>KKU Mini Marathon 5K</h3>
+              <p class="date">Sun, Oct 4 · 05:30</p><a class="btn" href="#">Join</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta" aria-labelledby="h-cta">
+        <div>
+          <h2 id="h-cta">Need more players? Create a match now.</h2>
+          <p>Connect with people who play the same sport near you.</p>
+        </div>
+        <a class="btn orange" href="#">Find Players</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="f-top">
+        <a class="logo" href="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 3l18 18M21 3L3 21" />
+          </svg>
+          Sport Hub
+        </a>
+        <form class="sub" onsubmit="return false">
+          <input type="email" placeholder="Enter your email to get the latest news" aria-label="Email address">
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="cols">
+        <div class="col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="courts.html">Sports</a></li>
+            <li><a href="courts.html">Courts</a></li>
+            <li><a href="#">Map</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="players.html">Find Players</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="#">Sport Clubs</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Cancellation Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col app">
+          <h4>Get the App</h4>
+          <div class="stores"><a href="#">App Store</a><a href="#">Google Play</a></div>
+          <div class="social"><a href="#" aria-label="Facebook"></a><a href="#" aria-label="Instagram"></a><a href="#"
+              aria-label="X"></a><a href="#" aria-label="YouTube"></a></div>
+        </div>
+      </div>
+      <div class="f-bot"><span>© 2026 Sport Hub. All rights reserved.</span><span><a href="#">Privacy</a><a
+            href="#">Terms</a></span></div>
+    </div>
+  </footer>
+
+  <nav class="tabs" aria-label="Bottom">
+    <a href="index.html" aria-current="page">Home</a><a href="courts.html">Sports</a><a href="#">Players</a><a
+      href="#">Events</a><a href="community.html">Community</a>
+  </nav>
+
+  <script>
+    const b = document.getElementById('menubtn'), m = document.getElementById('menu');
+    b.addEventListener('click', () => { const o = m.classList.toggle('open'); b.setAttribute('aria-expanded', o); b.setAttribute('aria-label', o ? 'Close menu' : 'Open menu') });
+  </script>
+    <script src="app.js"></script>
+</body>
+
+</html>

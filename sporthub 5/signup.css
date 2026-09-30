@@ -1,0 +1,459 @@
+        :root {
+            --bg: #fdfcf7;
+            --surface: #fff;
+            --hero: #ecf3ee;
+            --text: #111827;
+            --muted: #4b5563;
+            --soft: #6b7280;
+            --line: #c9ced3;
+            --brand: #064e3a;
+            --link: #064e3a;
+            --input: #fff;
+            --chip: #e3ede7;
+            --chipt: #2f5d4d;
+            --alt: #5f9a86;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0b1512;
+                --surface: #12211c;
+                --hero: #0f201a;
+                --text: #ecf3ee;
+                --muted: #b6c4bd;
+                --soft: #94a39c;
+                --line: #2c4037;
+                --link: #6ee7b7;
+                --input: #0e1a16;
+                --chip: #1b2f28;
+                --chipt: #b6dccb;
+                --alt: #3f7f68
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0b1512;
+            --surface: #12211c;
+            --hero: #0f201a;
+            --text: #ecf3ee;
+            --muted: #b6c4bd;
+            --soft: #94a39c;
+            --line: #2c4037;
+            --link: #6ee7b7;
+            --input: #0e1a16;
+            --chip: #1b2f28;
+            --chipt: #b6dccb;
+            --alt: #3f7f68
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px)
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', 'Noto Sans Thai', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        h1,
+        h2,
+        p {
+            margin: 0
+        }
+
+        :focus-visible {
+            outline: 3px solid #34d399;
+            outline-offset: 2px
+        }
+
+        .auth {
+            min-height: 100dvh;
+            display: grid
+        }
+
+        .side {
+            display: none
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 14px 20px 32px
+        }
+
+        .card {
+            width: 100%;
+            max-width: 420px
+        }
+
+        .back {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 400;
+            margin-bottom: 6px
+        }
+
+        .brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--link);
+            margin-top: 6px
+        }
+
+        .brand:hover {
+            text-decoration: none
+        }
+
+        .brand svg {
+            width: 22px;
+            height: 22px
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -.015em;
+            margin-top: 8px
+        }
+
+        .sub {
+            text-align: center;
+            font-size: 13.5px;
+            color: var(--muted);
+            margin: 4px 0 20px
+        }
+
+        .f {
+            display: grid;
+            gap: 6px;
+            margin-bottom: 14px
+        }
+
+        .f label,
+        .lbl {
+            font-size: 12.5px;
+            font-weight: 600
+        }
+
+        .f input {
+            width: 100%;
+            height: 44px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: var(--input);
+            color: var(--text);
+            font: inherit;
+            font-size: 14px;
+            padding: 0 14px
+        }
+
+        .f input::placeholder {
+            color: var(--soft)
+        }
+
+        .f input:focus {
+            outline: 3px solid #34d399;
+            outline-offset: 1px;
+            border-color: var(--brand)
+        }
+
+        .two {
+            display: grid;
+            gap: 0
+        }
+
+        .opts {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin: -2px 0 16px
+        }
+
+        .opts label,
+        .agree {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted)
+        }
+
+        input[type=checkbox] {
+            accent-color: var(--brand);
+            width: 15px;
+            height: 15px;
+            margin: 0
+        }
+
+        .btn {
+            width: 100%;
+            height: 44px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--brand);
+            color: #fff;
+            font: inherit;
+            font-size: 14.5px;
+            font-weight: 600;
+            cursor: pointer
+        }
+
+        .btn:hover {
+            filter: brightness(1.18)
+        }
+
+        .or {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--soft);
+            font-size: 12px;
+            margin: 16px 0
+        }
+
+        .or::before,
+        .or::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--line)
+        }
+
+        .alts {
+            display: grid;
+            gap: 10px
+        }
+
+        .alt {
+            display: grid;
+            place-items: center;
+            height: 42px;
+            border: 1.5px solid var(--alt);
+            border-radius: 10px;
+            background: var(--surface);
+            color: var(--link);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit
+        }
+
+        .alt:hover {
+            text-decoration: none;
+            filter: brightness(.97)
+        }
+
+        .switch {
+            text-align: center;
+            font-size: 13.5px;
+            color: var(--muted);
+            margin-top: 18px
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px
+        }
+
+        .chip input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none
+        }
+
+        .chip span {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: var(--chip);
+            color: var(--chipt);
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid transparent
+        }
+
+        .chip input:checked+span {
+            background: var(--brand);
+            color: #fff
+        }
+
+        .chip input:focus-visible+span {
+            outline: 3px solid #34d399;
+            outline-offset: 2px
+        }
+
+        .agree {
+            margin: 0 0 14px;
+            font-size: 13px
+        }
+
+        .err {
+            color: #dc2626;
+            font-size: 12px;
+            min-height: 0
+        }
+
+        @media (min-width:768px) {
+            .main {
+                align-items: center;
+                background: var(--hero);
+                padding: 40px 24px
+            }
+
+            .card {
+                max-width: 520px;
+                background: var(--surface);
+                border-radius: 24px;
+                padding: 32px 36px;
+                box-shadow: 0 12px 32px rgba(6, 78, 58, .12)
+            }
+
+            .back {
+                display: none
+            }
+
+            .alts,
+            .two {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px
+            }
+
+            .two {
+                gap: 0 14px
+            }
+        }
+
+        @media (min-width:1024px) {
+            .main {
+                background: var(--bg)
+            }
+
+            .card {
+                background: none;
+                box-shadow: none;
+                padding: 0
+            }
+
+            .side {
+                display: flex;
+                color: #fff
+            }
+        }
+
+        .side ul {
+            list-style: none;
+            margin: 24px 0 0;
+            padding: 0;
+            display: grid;
+            gap: 16px
+        }
+
+        .side li {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .side i {
+            flex: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #fff;
+            display: grid;
+            place-items: center
+        }
+
+        .side i::after {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #064e3a
+        }
+
+        .side b {
+            display: block;
+            font-size: 14.5px
+        }
+
+        .side span {
+            font-size: 12.5px;
+            color: #bfe0d1
+        }
+
+        .photo {
+            margin-top: 28px;
+            height: 190px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #166534, #4d7c0f);
+            display: grid;
+            place-items: center;
+            font-size: 12px;
+            font-weight: 600
+        }
+
+        .main {
+            padding-bottom: 40px
+        }
+
+        @media (min-width:1024px) {
+            .auth {
+                grid-template-columns: 5fr 6fr
+            }
+
+            .card {
+                max-width: 480px
+            }
+
+            .side {
+                background: #054d3a;
+                align-items: center;
+                padding: 64px
+            }
+
+            .side>div {
+                width: 100%;
+                max-width: 470px
+            }
+
+            .side h2 {
+                font-size: 30px;
+                font-weight: 800
+            }
+        }
+    
+.mb8{margin-bottom:8px}
