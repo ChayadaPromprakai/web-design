@@ -1,0 +1,111 @@
+/* Sport Hub – layout ของหน้า Map, Find Players, Events, Community, Profile, Court Details (ตาม mockup) */
+.pgt { font-size: 28px; font-weight: 800; letter-spacing: -.01em }
+.sm { font-size: 13px; color: var(--muted) }
+.tag { display: inline-block; border-radius: 99px; padding: 2px 10px; background: var(--chip); color: var(--chipt); font: 600 12px Inter, sans-serif }
+.tag.dk { background: var(--brand); color: #fff }
+.btn.s { padding: 7px 14px; font-size: 13px }
+.btn.ac { background: var(--acc); color: #fff }
+.seg { display: flex; flex-wrap: wrap; gap: 6px }
+.opt { border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: 99px; padding: 6px 14px; font: 600 13px Inter, sans-serif; cursor: pointer }
+.opt[aria-pressed=true] { background: var(--brand); border-color: var(--brand); color: #fff }
+.tabs { display: flex; gap: 22px; border-bottom: 1px solid var(--line); margin: 14px 0; overflow-x: auto }
+.tabs .opt, .tabs a { border: 0; border-radius: 0; background: none; color: var(--muted); padding: 8px 0; font: 600 14px Inter, sans-serif; border-bottom: 2px solid transparent; white-space: nowrap }
+.tabs .opt[aria-pressed=true], .tabs a[aria-current] { color: var(--link); border-bottom-color: var(--brand); background: none }
+.cols { display: grid; gap: 20px; padding: 24px 0 40px }
+.cols > * { min-width: 0 }
+@media (min-width: 1000px) {
+  .c-pl { grid-template-columns: 210px 1fr 290px }
+  .c-cm { grid-template-columns: 190px 1fr 290px }
+  .c-ev { grid-template-columns: 280px 1fr }
+  .c-pf { grid-template-columns: 300px 1fr }
+  .c-ct { grid-template-columns: 1fr 340px }
+}
+.panel h2 { font-size: 17px }
+.stk { display: grid; gap: 14px; align-content: start }
+.dots { display: inline-flex } .dots i { width: 18px; height: 18px; border-radius: 50%; background: var(--line); border: 2px solid var(--surface); margin-right: -5px }
+.pn { display: flex; align-items: center; gap: 10px } .pn > div { flex: 1; min-width: 0 } .pn h3 { font-size: 14px }
+.pn .av { width: 36px; height: 36px; font-size: 13px }
+.cta { background: var(--brand); color: #fff; border-radius: 16px; padding: 20px; display: grid; gap: 8px }
+.cta p { opacity: .85; font-size: 14px }
+
+/* Find Players */
+.mc { padding: 16px; gap: 8px }
+.mc .top { display: flex; justify-content: space-between; align-items: center }
+.mc h3 { font-size: 16px } .mc h3 a { color: inherit }
+.mc .meta { display: grid; gap: 2px; font-size: 13px; color: var(--muted) }
+.pg { height: 5px; border-radius: 9px; background: var(--chip) } .pg i { display: block; height: 100%; border-radius: 9px; background: var(--acc) }
+.mc .ft { display: flex; justify-content: space-between; align-items: center; gap: 10px }
+.flt { gap: 16px } .flt .fg { display: grid; gap: 8px } .flt b { font-size: 13px }
+
+/* Map */
+.mapbox { position: relative; min-height: 640px; overflow: hidden; border-bottom: 1px solid var(--line) }
+.mapz { position: absolute; inset: 0; background: var(--hero) }
+.mapz::before { content: ""; position: absolute; inset: 0; opacity: .85;
+  background: linear-gradient(90deg, transparent 0 31%, var(--surface) 31% 32.2%, transparent 32.2% 66%, var(--surface) 66% 67.2%, transparent 67.2%),
+    linear-gradient(0deg, transparent 0 42%, var(--surface) 42% 43.5%, transparent 43.5% 78%, var(--surface) 78% 79.2%, transparent 79.2%) }
+.mp { position: absolute; left: 20px; top: 20px; bottom: 20px; width: 350px; z-index: 2; overflow: auto; align-content: start; box-shadow: 0 8px 24px rgba(0, 0, 0, .12) }
+.mp input { height: 40px; border: 1px solid var(--line); border-radius: 10px; padding: 0 12px; background: var(--surface); color: var(--text); font: inherit; font-size: 14px }
+.crt { display: flex; gap: 10px; align-items: center; border: 1px solid var(--line); border-radius: 12px; padding: 10px; list-style: none; background: var(--surface) }
+.crt.on { border-color: var(--brand); box-shadow: inset 0 0 0 1px var(--brand) }
+.crt > div { flex: 1; min-width: 0; display: grid } .crt h3 { font-size: 14px }
+.th { width: 56px; height: 56px; border-radius: 10px; background: var(--chip) center / cover; flex: none }
+#clist { margin: 0; padding: 0; display: grid; gap: 8px }
+.pin { position: absolute; width: 18px; height: 18px; padding: 0; border-radius: 50%; background: var(--brand); border: 3px solid var(--surface); cursor: pointer; transform: translate(-50%, -50%) }
+.pin.on { width: 26px; height: 26px; background: var(--acc) }
+.pop { position: absolute; right: 24px; top: 24px; width: 230px; z-index: 2; overflow: hidden; padding: 0; gap: 0 }
+.pop .ph { height: 90px; background-size: cover; background-position: center } .pop .cb { gap: 6px }
+@media (max-width: 899px) {
+  .mapbox { display: flex; flex-direction: column; min-height: 0 }
+  .mapz { position: relative; inset: auto; height: 320px }
+  .mp { position: static; width: auto; box-shadow: none; border: 0; border-radius: 0 }
+  .pop { right: 12px; top: 12px; width: 190px }
+}
+
+/* Events */
+.feat { margin-top: 16px; border-radius: 20px; padding: 48px 32px; color: #fff; display: grid; gap: 10px; justify-items: start; background: linear-gradient(135deg, #c2410c, #9a3412) }
+.feat h2 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -.02em }
+.feat .btn { background: #fff; color: #9a3412 }
+.ev { flex-direction: row; align-items: center; gap: 14px; padding: 12px 16px }
+.ev > div:not(.dbox) { flex: 1; min-width: 0; display: grid; gap: 2px } .ev h3 { font-size: 16px } .ev h3 a { color: inherit }
+.dbox { width: 54px; height: 58px; border-radius: 10px; background: var(--brand); color: #fff; display: grid; place-items: center; align-content: center; flex: none; line-height: 1.1; font-size: 11px; font-weight: 600 }
+.dbox b { font-size: 22px }
+.evs { display: grid; gap: 10px }
+#cal { width: 100%; border-collapse: collapse; font-size: 13px; text-align: center } #cal th { color: var(--muted); font-weight: 600; padding: 4px 0 }
+#cal td { padding: 6px 0 } #cal .d { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; font-weight: 600 }
+#cal .has { background: var(--chip); color: var(--chipt) } #cal .now { background: var(--brand); color: #fff }
+.lg { display: grid; gap: 6px; font-size: 13px } .lg span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 8px; background: var(--brand) }
+.lg span:nth-child(2)::before { background: var(--acc) } .lg span:nth-child(3)::before { background: #0f766e } .lg span:nth-child(4)::before { background: #7c3aed }
+
+/* Community */
+.post { gap: 10px; padding: 16px } .post.ann { background: var(--chip); border-color: var(--brand) }
+.post header { display: flex; align-items: center; gap: 10px } .post header > div { flex: 1; min-width: 0; display: grid; line-height: 1.3 } .post header b { font-size: 14px }
+.post .av { width: 36px; height: 36px; font-size: 13px } .post h3 { font-size: 16px }
+.post .ph { height: 240px; border-radius: 12px; background-size: cover; background-position: center }
+.post footer, .post .acts { display: flex; gap: 16px; font-size: 13px; color: var(--muted); background: none; padding: 0 }
+.side-nav { display: grid; gap: 4px; align-content: start } .side-nav .opt { border: 0; border-radius: 10px; text-align: left; background: none; padding: 9px 12px } .side-nav .opt[aria-pressed=true] { background: var(--chip); color: var(--link) }
+.say { display: flex; gap: 10px } .say input { flex: 1; min-width: 0; height: 44px; border: 1px solid var(--line); border-radius: 10px; padding: 0 14px; background: var(--surface); color: var(--text); font: inherit; font-size: 14px }
+.empty { color: var(--muted); text-align: center; padding: 30px 0 }
+@media (max-width: 999px) { .side-nav { display: flex; overflow-x: auto } }
+
+/* Profile */
+.cover { height: 220px; background: linear-gradient(135deg, #064e3a, #0f766e) }
+.pcard { text-align: center; justify-items: center } .pcard .av { width: 96px; height: 96px; font-size: 32px; border: 4px solid var(--surface) }
+@media (min-width: 1000px) { .c-pf > .pcard { margin-top: -70px; position: relative } }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100% } .stats div { background: var(--bg); border-radius: 12px; padding: 10px; display: grid } .stats b { font-size: 22px }
+.pcard h3 { justify-self: start; font-size: 15px } .pcard .seg { justify-self: start }
+.mgrid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) } .mgrid .mc small { color: var(--muted) }
+
+/* Court details */
+.crumbs { font-size: 13px; color: var(--muted); padding: 14px 0 }
+.gal { display: grid; gap: 8px; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 150px 150px; border-radius: 16px; overflow: hidden }
+.gal > * { background-size: cover; background-position: center; display: grid; place-items: center; color: #fff; font-weight: 600; font-size: 13px }
+.gal .m { grid-row: span 2 }
+@media (min-width: 700px) { .gal { grid-template-rows: 190px 190px } }
+@media (max-width: 599px) { .gal { grid-template-columns: 1fr 1fr } .gal .m { grid-column: span 2; grid-row: auto; height: 200px } }
+.ct h1 { font-size: 30px; font-weight: 800 } .ct .acts { display: flex; gap: 8px; flex-wrap: wrap }
+.book { align-self: start; position: sticky; top: 76px; box-shadow: 0 8px 24px rgba(0, 0, 0, .08) } .book .pr { font-size: 26px }
+.rv { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 6px; background: var(--surface) }
+.mini { height: 200px; display: grid; place-items: center; color: var(--muted); font-weight: 600; position: relative; border-radius: 12px; background: var(--hero) }
+.mini i { position: absolute; width: 16px; height: 16px; border-radius: 50%; background: var(--acc); border: 3px solid var(--surface) }
+
+.cols > aside, .cols > nav { align-self: start }

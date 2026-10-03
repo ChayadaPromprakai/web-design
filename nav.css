@@ -1,0 +1,90 @@
+/* Sport Hub – multi-level dropdown navigation (shared by every page) */
+.nav { z-index: 50 }
+.nav .wrap { gap: 20px }
+
+/* hamburger */
+.nav .menubtn {
+  display: grid; place-items: center; width: 36px; height: 36px; padding: 0;
+  background: none; border: 0; color: var(--text); cursor: pointer; margin-left: 4px
+}
+.nav .menubtn svg { width: 22px; height: 22px }
+.nav .wrap > a.login ~ .menubtn { margin-left: 0 }
+
+/* shared pieces */
+.nav .dd { position: relative }
+.nav .tg {
+  width: 22px; height: 22px; padding: 0; border: 0; background: none; cursor: pointer;
+  color: inherit; position: relative; flex: none
+}
+.nav .tg::before {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 6px; height: 6px;
+  border: solid currentColor; border-width: 0 2px 2px 0; opacity: .75;
+  transform: translate(-50%, -70%) rotate(45deg); transition: transform .15s
+}
+.nav .tg:focus-visible, .nav .dd > a:focus-visible, .nav .sub a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px }
+
+/* ---------- mobile / tablet: accordion ---------- */
+.nav .links { display: none }
+.nav .menu { display: none; max-height: calc(100vh - 110px); overflow-y: auto; padding: 0; background: var(--surface); border-top: 1px solid var(--line) }
+.nav .menu.open { display: block }
+.nav .menu a {
+  display: block; white-space: normal; padding: 13px 20px; color: var(--text);
+  font-weight: 500; border-bottom: 1px solid var(--line)
+}
+.nav .menu a[aria-current] { color: var(--link); font-weight: 600 }
+.nav .menu .dd { display: flex; flex-wrap: wrap; align-items: stretch }
+.nav .menu .dd > a { flex: 1 1 0; min-width: 0 }
+.nav .menu .tg { width: 52px; height: auto; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--text) }
+.nav .menu .sub { display: none; flex: 0 0 100%; background: color-mix(in srgb, var(--line) 18%, var(--surface)) }
+.nav .menu .dd.open > .sub { display: block }
+.nav .menu .dd.open > .tg::before { transform: translate(-50%, -30%) rotate(225deg) }
+.nav .menu .sub a { padding-left: 36px; font-weight: 400 }
+.nav .menu .sub .sub a { padding-left: 52px }
+.nav .menu .sub .sub .sub a { padding-left: 68px }
+.nav .menu .sub .sub .sub .sub a { padding-left: 84px }
+.nav .wrap > a.login { display: none }
+
+@media (min-width: 640px) { .nav .wrap > a.login { display: inline } }
+
+/* ---------- desktop: hover / focus dropdowns ---------- */
+@media (min-width: 1100px) {
+  .nav .menubtn, .nav .menu, .nav .menu.open { display: none }
+  .nav .wrap { gap: 24px }
+  .nav .links { display: flex; align-self: stretch; align-items: stretch; gap: 20px; font-size: 15px; font-weight: 500 }
+  .nav .links > a, .nav .links > .dd > a { display: flex; align-items: center; padding: 0; border-bottom: 2px solid transparent; white-space: nowrap; color: var(--muted, #4b5563) }
+  .nav .links > .dd { display: flex; align-items: center }
+  .nav .links > .dd > .tg { margin-left: 2px }
+  .nav .links a[aria-current] { color: var(--link); font-weight: 600 }
+  .nav .links > a[aria-current], .nav .links > .dd > a[aria-current] { border-bottom-color: var(--link) }
+
+  .nav .links .sub {
+    display: none; position: absolute; top: 100%; left: 0; min-width: 220px; z-index: 60;
+    padding: 6px 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 0 0 10px 10px; box-shadow: 0 12px 28px rgba(0, 0, 0, .14)
+  }
+  .nav .links .dd:hover > .sub,
+  .nav .links .dd:focus-within > .sub,
+  .nav .links .dd.open > .sub { display: block }
+
+  .nav .links .sub a {
+    display: block; padding: 9px 40px 9px 16px; white-space: nowrap; color: var(--text);
+    font-weight: 400; border: 0
+  }
+  .nav .links .sub a:hover, .nav .links .sub .dd:hover > a { background: var(--chip, #e3ede7); color: var(--link) }
+  .nav .links .sub a[aria-current] { color: var(--link); font-weight: 600 }
+
+  /* nested levels fly out to the right, with a › arrow */
+  .nav .links .sub .dd { display: block }
+  .nav .links .sub .dd > .tg { position: absolute; right: 8px; top: 0; height: 100%; width: 24px; pointer-events: none }
+  .nav .links .sub .dd > .tg::before { transform: translate(-70%, -50%) rotate(-45deg) }
+  .nav .links .sub .dd > .sub { top: -7px; left: 100%; border-radius: 10px }
+
+  /* last items open to the left so they never leave the screen */
+  .nav .links > .dd:nth-last-child(-n+2) > .sub { left: auto; right: 0 }
+  .nav .links > .dd:nth-last-child(-n+2) .sub .sub { left: auto; right: 100% }
+}
+
+/* keep the header on one line; "My Bookings" now lives under Account */
+.nav .logo, .nav .btn.auth-link { white-space: nowrap }
+.nav .wrap > a.login { display: none !important }
+.nav .wrap > a.auth-link { margin-left: auto }

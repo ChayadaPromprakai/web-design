@@ -1,0 +1,45 @@
+/* Sport Hub – โลโก้ตัวหนังสือสองสี (ใช้ร่วมกันทุกหน้า)
+   "Sport" = เขียวแบรนด์  |  "Hub" = ส้ม
+   ใช้งาน: <a class="logo"><span class="logo-text"><span class="logo-a">Sport</span><span class="logo-b">Hub</span></span></a>
+   เปลี่ยนสีได้ที่ตัวแปร --logo-a / --logo-b ด้านล่างนี้ที่เดียว */
+
+:root {
+  --logo-a: #064e3a;
+  --logo-b: #c2410c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --logo-a: #6ee7b7;
+    --logo-b: #fb923c;
+  }
+}
+
+:root[data-theme="dark"] {
+  --logo-a: #6ee7b7;
+  --logo-b: #fb923c;
+}
+
+.logo,
+.brand {
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.logo-text { display: inline-block; white-space: nowrap; }
+.logo-a { color: var(--logo-a); }
+.logo-b { color: var(--logo-b); margin-left: .12em; }
+
+/* ฟุตเตอร์พื้นเขียวเข้ม: "Sport" เป็นสีขาว, "Hub" เป็นส้มสว่าง */
+footer .logo-a,
+.flogo .logo-a { color: #fff; }
+
+footer .logo-b,
+.flogo .logo-b { color: #fb923c; }
+
+/* ไอคอนกล่องข้างโลโก้ใช้สีเดียวกับ "Sport" */
+.logo svg,
+.brand svg { color: var(--logo-a); }
+
+footer .logo svg,
+.flogo svg { color: #fff; }

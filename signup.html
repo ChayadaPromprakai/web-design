@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Create account – Sport Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="signup.css">
+<style>
+/* รูปในกล่อง .photo ให้เต็มกล่อง */
+.photo { position: relative; overflow: hidden }
+.photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block }
+</style>
+  <link rel="stylesheet" href="logo.css">
+</head>
+
+<body data-page="signup">
+    <div class="auth">
+        <main class="main">
+            <div class="card">
+                <a class="back" href="index.html">‹ Back</a>
+                <a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M3 3l18 18M21 3L3 21" />
+                    </svg><span class="logo-text"><span class="logo-a">Sport</span><span class="logo-b">Hub</span></span></a>
+                <h1>Create your account</h1>
+                <p class="sub">Join Sport Hub and start playing today</p>
+                <form id="f">
+                    <div class="two">
+                        <div class="f"><label for="fn">First name</label><input id="fn" type="text"
+                                autocomplete="given-name" placeholder="John" required></div>
+                        <div class="f"><label for="ln">Last name</label><input id="ln" type="text"
+                                autocomplete="family-name" placeholder="Doe" required></div>
+                    </div>
+                    <div class="f"><label for="em">Email</label><input id="em" type="email" autocomplete="email"
+                            placeholder="name@email.com" required></div>
+                    <div class="f"><label for="ph">Phone</label><input id="ph" type="tel" autocomplete="tel"
+                            placeholder="08x-xxx-xxxx" required></div>
+                    <div class="two">
+                        <div class="f"><label for="p1">Password</label><input id="p1" type="password"
+                                autocomplete="new-password" minlength="8" placeholder="••••••••" required></div>
+                        <div class="f"><label for="p2">Confirm password</label><input id="p2" type="password"
+                                autocomplete="new-password" placeholder="••••••••" required></div>
+                    </div>
+                    <div class="lbl mb8" id="sl">Sports you like</div>
+                    <div class="chips" role="group" aria-labelledby="sl"><label class="chip"><input type="checkbox"
+                                name="sports" value="Soccer" checked><span>Soccer</span></label><label
+                            class="chip"><input type="checkbox" name="sports" value="Badminton"
+                                checked><span>Badminton</span></label><label class="chip"><input type="checkbox"
+                                name="sports" value="Basketball"><span>Basketball</span></label><label
+                            class="chip"><input type="checkbox" name="sports"
+                                value="Tennis"><span>Tennis</span></label><label class="chip"><input type="checkbox"
+                                name="sports" value="Running"><span>Running</span></label></div>
+                    <label class="agree"><input type="checkbox" required> <span>I agree to the Terms &amp; Privacy
+                            Policy</span></label>
+                    <p class="err" id="err" role="alert"></p>
+                    <button class="btn" type="submit">Create Account</button>
+                </form>
+                <p class="switch">Already have an account? <a href="login.html">Log in</a></p>
+            </div>
+        </main>
+        <aside class="side">
+            <div>
+                <h2>Why join Sport Hub?</h2>
+                <ul>
+                    <li><i></i>
+                        <div><b>Book in seconds</b><span>See real-time availability and pay online.</span></div>
+                    </li>
+                    <li><i></i>
+                        <div><b>Never play alone</b><span>Find players and create matches near you.</span></div>
+                    </li>
+                    <li><i></i>
+                        <div><b>Join the community</b><span>Events, clubs and news for sport lovers.</span></div>
+                    </li>
+                </ul>
+                <div class="photo"><img src="image/signup.png" alt="Players photo"></div>
+            </div>
+        </aside>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
